@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+  <title>Chart JS</title>
+</head>
+<body>
+  
+  <canvas id="myChart" height="40vh" width="80vw"></canvas>
+
+  <script>
+  let myChart = document.getElementById('myChart').getContext('2d');
+
+  let mexPopChart = new Chart(myChart, {
+    type: 'doughnut', // bar, horizontalBar, pie, line, radar, doughnut, polarArea
+    data: {
+      labels: ['Mexico City', 'Puebla', 'Merida', 'Tijuana', 'Guadalajara'],
+      datasets: [{
+        label: 'Population in Mexico',
+        backgroundColor: 'rgb(255, 99, 132)',
+        responsive: true,
+        data: [ // data goes here
+          12,294,193,
+          1,590,256,
+          717,175,
+          1,376,457,
+          1,640,589
+        ],
+      }]
+    }
+  })
+  </script>
+</body>
+</html>
