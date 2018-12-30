@@ -1,0 +1,22 @@
+{
+  "name": "chartsjs",
+  "version": "1.0.0",
+  "description": "Displaying data on a Chart using ChartsJS library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marilyn-n/chartsJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marilyn-n/chartsJS/issues"
+  },
+  "homepage": "https://github.com/marilyn-n/chartsJS#readme",
+  "dependencies": {
+    "chart.js": "^2.7.3"
+  }
+}
