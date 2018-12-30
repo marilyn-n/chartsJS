@@ -22,14 +22,20 @@
       labels: ['Mexico City', 'Puebla', 'Merida', 'Tijuana', 'Guadalajara'],
       datasets: [{
         label: 'Population in Mexico',
-        backgroundColor: 'rgb(255, 99, 132)',
+        backgroundColor: [
+          'rgb(255, 99, 132)', 
+          'rgb(255, 255, 132)',
+          'rgb(124, 244, 232)',
+          'rgb(180, 150, 255)',
+          'rgb(145, 255, 180)'
+        ],
         responsive: true,
         data: [ // data goes here
-          12,294,193,
-          1,590,256,
-          717,175,
-          1,376,457,
-          1,640,589
+          12294193,
+          1590256,
+          717175,
+          1376457,
+          1640589
         ],
       }]
     }
