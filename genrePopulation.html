@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Genre Population in Mexico(2018) with Chart.JS</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+<body>
+  <canvas id="myChart" height="40vh" width="80vw"></canvas>
+
+<script>
+
+fetch('http://api.population.io:80/1.0/population/2018/Mexico/')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    const malePop = data.map(item => item.males).reduce((p,c) => p+c,0)
+    const femalePop = data.map(item => item.females).reduce((p,c) => p+c,0)  
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    let mexPopChart = new Chart(myChart, {
+      type: 'pie', // bar, horizontalBar, pie, line, radar, doughnut, polarArea
+      data: {
+        labels: ['Male', 'Female'],
+        datasets: [{
+          label: 'Population F/M in Mexico',
+          backgroundColor: [
+            'rgb(0, 204, 255)', 
+            'rgb(255, 102, 204)'
+          ],
+          responsive: true,
+          data: [ // data goes here
+            malePop,
+            femalePop
+          ],
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Population in Mexico(2018)'
+        },
+        legend: {
+          position: 'left',
+        }
+      }
+    })
+  })
+  
+  </script>
+</body>
+</html>
